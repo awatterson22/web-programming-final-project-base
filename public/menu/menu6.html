@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>People’s Organic</title>
+    <link
+      rel="shortcut icon"
+      href="../images/umass_circle_logo.png"
+      type="image/x-icon"
+    />
+    <link href="menu.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="menu.js" defer></script>
+    <script src="../authentication/authentication.js"></script>
+  </head>
+
+  <body>
+    <ul class="icon-and-title">
+      <li>
+        <img src="../images/umass_circle_logo.png" alt="UMass Amherst Logo" />
+      </li>
+      <li>
+        <h1 id="title">UMass Pick-Up</h1>
+      </li>
+    </ul>
+
+    <div>
+      <ul class="topnav">
+        <li><a class="active" href="../index.html">Home</a></li>
+        <li><a href="../orders/orders.html">Orders</a></li>
+        <li><a href="../contact/contact.html">Contact</a></li>
+        <li class="logout"><button id="logout">Sign Out</button></li>
+      </ul>
+    </div>
+
+    <br />
+    <div id="menu">
+      <h1>Wasabi Menu</h1>
+      <p id="instructions">
+        <strong>Instructions:</strong><br />Please choose quantity of your
+        desired menu item(s).
+      </p>
+
+      <form>
+        <div id="Appetizers">
+          <h2>Appetizers</h2>
+          <div id="warning" hidden>
+            **Please select at least one item from the entire menu
+          </div>
+          <div>
+            <div class="leaders">
+              <input type="number" name="entree" id="ab" min="0" />
+              <label for="ab">Edamame</label>
+              <span>$3.00</span>
+            </div>
+
+            <div class="leaders">
+              <input type="number" name="entree" id="bbbb" min="0" />
+              <label for="bbbb">Miso Soup</label>
+              <span>$3.00</span>
+            </div>
+
+            <div class="leaders">
+              <input type="number" name="entree" id="bbb" min="0" />
+              <label for="bbb">Seaweed Salad</label>
+              <span>$2.25</span>
+            </div>
+
+           
+
+        <div id="Entrees">
+          <h2>Entrees</h2>
+          <div class="leaders">
+            <input type="number" name="Snd" id="cm" min="0" />
+            <label for="cm">Jasmine Rice</label>
+            <span>$4.00</span>
+          </div>
+
+          <div class="leaders">
+            <input type="number" name="Snd" id="sm" min="0" />
+            <label for="sm">Sushi Rice w/ Vinegar</label>
+            <span>$4.00</span>
+          </div>
+
+          <div class="leaders">
+            <input type="number" name="Snd" id="vm" min="0" />
+            <label for="vm">Vegetable Fried Rice w/Egg</label>
+            <span>$4.00</span>
+          </div>
+
+
+          <div id="Sushi">
+            <h2>Sushi</h2>
+            <div class="leaders">
+              <input type="number" name="Snd" id="cm" min="0" />
+              <label for="cm">Alaskan Roll</label>
+              <span>$5.00</span>
+            </div>
+  
+            <div class="leaders">
+              <input type="number" name="Snd" id="sm" min="0" />
+              <label for="sm">California Roll</label>
+              <span>$5.00</span>
+            </div>
+  
+            <div class="leaders">
+              <input type="number" name="Snd" id="vm" min="0" />
+              <label for="vm">Oishi Roll</label>
+              <span>$5.00</span>
+            </div>
+  
+            <div class="leaders">
+                <input type="number" name="Snd" id="vm" min="0" />
+                <label for="vm">Paradise Roll</label>
+                <span>$5.00</span>
+              </div>
+  
+              
+              <div class="leaders">
+                <input type="number" name="Snd" id="vm" min="0" />
+                <label for="vm">Philadelphia Roll</label>
+                <span>$5.00</span>
+              </div>
+  
+              
+              <div class="leaders">
+                <input type="number" name="Snd" id="vm" min="0" />
+                <label for="vm">Pink Panther Roll</label>
+                <span>$5.00</span>
+              </div>
+
+              <div class="leaders">
+                <input type="number" name="Snd" id="vm" min="0" />
+                <label for="vm">Rainbow Roll</label>
+                <span>$5.00</span>
+              </div>
+    
+              <div class="leaders">
+                <input type="number" name="Snd" id="vm" min="0" />
+                <label for="vm">Red Dragon Roll</label>
+                <span>$5.00</span>
+              </div>
+    
+              <div class="leaders">
+                <input type="number" name="Snd" id="vm" min="0" />
+                <label for="vm">Spicy Tuna Roll</label>
+                <span>$5.00</span>
+              </div>
+    
+
+              <div class="leaders">
+                <input type="number" name="Snd" id="vm" min="0" />
+                <label for="vm">Sweet Potato Tempura Roll</label>
+                <span>$5.00</span>
+              </div>
+    
+              <div class="leaders">
+                <input type="number" name="Snd" id="vm" min="0" />
+                <label for="vm">Sweet Potato Tempura Roll</label>
+                <span>$5.00</span>
+              </div>
+    
+              <div class="leaders">
+                <input type="number" name="Snd" id="vm" min="0" />
+                <label for="vm">TIger Roll</label>
+                <span>$5.00</span>
+              </div>
+
+              <div class="leaders">
+                <input type="number" name="Snd" id="vm" min="0" />
+                <label for="vm">Vegetable Sushi Roll</label>
+                <span>$5.00</span>
+              </div>
+    
+    
+    
+    
+              <div id="Bowls">
+                <h2>Bowls</h2>
+                <div class="leaders">
+                  <input type="number" name="Snd" id="cm" min="0" />
+                  <label for="cm">Ahimi Bowl</label>
+                  <span>$5.00</span>
+                </div>
+      
+                <div class="leaders">
+                  <input type="number" name="Snd" id="sm" min="0" />
+                  <label for="sm">Beef Teppanyaki</label>
+                  <span>$5.00</span>
+                </div>
+      
+                <div class="leaders">
+                  <input type="number" name="Snd" id="vm" min="0" />
+                  <label for="vm">Beef Teriyaki Don</label>
+                  <span>$5.00</span>
+                </div>
+      
+                <div class="leaders">
+                    <input type="number" name="Snd" id="vm" min="0" />
+                    <label for="vm">Blue Wall Don</label>
+                    <span>$5.00</span>
+                  </div>
+
+                  <div class="leaders">
+                    <input type="number" name="Snd" id="vm" min="0" />
+                    <label for="vm">Chicken Katsudon</label>
+                    <span>$5.00</span>
+                  </div>
+
+                  <div class="leaders">
+                    <input type="number" name="Snd" id="vm" min="0" />
+                    <label for="vm">Chicken Teppanyaki</label>
+                    <span>$5.00</span>
+                  </div>
+
+                  <div class="leaders">
+                    <input type="number" name="Snd" id="vm" min="0" />
+                    <label for="vm">Chicken Teriyaki Don</label>
+                    <span>$5.00</span>
+                  </div>
+
+                  <div class="leaders">
+                    <input type="number" name="Snd" id="vm" min="0" />
+                    <label for="vm">Chicken Teriyaki Don</label>
+                    <span>$5.00</span>
+                  </div>
+      
+
+                  <div class="leaders">
+                    <input type="number" name="Snd" id="vm" min="0" />
+                    <label for="vm">Oke Bowl</label>
+                    <span>$5.00</span>
+                  </div>
+
+                  <div class="leaders">
+                    <input type="number" name="Snd" id="vm" min="0" />
+                    <label for="vm">Pork Katsudon</label>
+                    <span>$5.00</span>
+                  </div>
+      
+                  <div class="leaders">
+                    <input type="number" name="Snd" id="vm" min="0" />
+                    <label for="vm">Spicy Salmon Bowl</label>
+                    <span>$5.00</span>
+                  </div>
+      
+                  <div class="leaders">
+                    <input type="number" name="Snd" id="vm" min="0" />
+                    <label for="vm">Spicy Tuna Bowl</label>
+                    <span>$5.00</span>
+                  </div>
+      
+      
+                  <div id="Add-ons">
+                    <h2>Add-ons</h2>
+                    <div class="leaders">
+                      <input type="number" name="Snd" id="cm" min="0" />
+                      <label for="cm">Add Gingerl</label>
+                      <span>$1.00</span>
+                    </div>
+          
+                    <div class="leaders">
+                      <input type="number" name="Snd" id="sm" min="0" />
+                      <label for="sm">Add Masago</label>
+                      <span>$1.00</span>
+                    </div>
+          
+                    <div class="leaders">
+                      <input type="number" name="Snd" id="vm" min="0" />
+                      <label for="vm">Add Veggies</label>
+                      <span>$1.00</span>
+                    </div>
+      
+                    <div class="leaders">
+                        <input type="number" name="Snd" id="vm" min="0" />
+                        <label for="vm">Add Wasabi</label>
+                        <span>$1.00</span>
+                      </div>
+      
+                      <div class="leaders">
+                        <input type="number" name="Snd" id="vm" min="0" />
+                        <label for="vm">Fried Egg</label>
+                        <span>$1.00</span>
+                      </div>
+
+                      <div class="leaders">
+                        <input type="number" name="Snd" id="vm" min="0" />
+                        <label for="vm">Pickeled Cucumber</label>
+                        <span>$1.00</span>
+                      </div>
+        
+                      <div class="leaders">
+                        <input type="number" name="Snd" id="vm" min="0" />
+                        <label for="vm">Tonkatsu Sauce</label>
+                        <span>$1.00</span>
+                      </div>
+        
+                      <div class="leaders">
+                        <input type="number" name="Snd" id="vm" min="0" />
+                        <label for="vm">Veggie Tempura</label>
+                        <span>$1.00</span>
+                      </div>
+      
+        
+      
+        
+
+          <hr />
+          <div>
+            <p id="total"><strong>Order Total: </strong>$0.00</p>
+          </div>
+        </div>
+        <input type="button" id="checkout" value="Check Out" />
+        <div id="error"></div>
+      </form>
+    </div>
+    <br />
+  </body>
+</html>
