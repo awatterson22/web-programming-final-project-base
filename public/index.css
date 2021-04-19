@@ -12,10 +12,7 @@ img {
 
 .grid-container {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(
-      0,
-      1fr
-    );
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   padding: 10px;
   margin: 10px;
 }
