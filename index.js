@@ -161,7 +161,7 @@ express()
     const entrees = req.body.entrees;
     const sides = req.body.sides;
     const total = req.body.total;
-    const restaurant = req.body.restaurant
+    const restaurant = req.body.restaurant.replace("'", "")
 
     // Construct customer order for the DB
     const customer_order = JSON.stringify({

@@ -1,107 +1,101 @@
 <!DOCTYPE html>
-
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>UMass Pick-Up</title>
-    <link
-      rel="shortcut icon"
-      href="images/umass_circle_logo.png"
-      type="image/x-icon"
-    />
-    <link rel="stylesheet" href="index.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="authentication/authentication.js"></script>
-  </head>
 
-  <body>
-    <ul class="icon-and-title">
-      <li>
-        <img src="images/umass_circle_logo.png" alt="UMass Amherst Logo" />
-      </li>
-      <li>
-        <h1 id="title">UMass Pick-Up</h1>
-      </li>
+<head>
+  <meta charset="utf-8" />
+  <title>UMass Pick-Up</title>
+  <link rel="shortcut icon" href="images/umass_circle_logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="index.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="authentication/authentication.js"></script>
+</head>
+
+<body>
+  <ul class="icon-and-title">
+    <li>
+      <img src="images/umass_circle_logo.png" alt="UMass Amherst Logo" />
+    </li>
+    <li>
+      <h1 id="title">UMass Pick-Up</h1>
+    </li>
+  </ul>
+  <div>
+    <ul class="topnav">
+      <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="orders/orders.html">Orders</a></li>
+      <li><a href="contact/contact.html">Contact</a></li>
+      <li class="logout"><button id="logout">Sign Out</button></li>
     </ul>
-
-    <div>
-      <ul class="topnav">
-        <li><a class="active" href="index.html">Home</a></li>
-        <li><a href="orders/orders.html">Orders</a></li>
-        <li><a href="contact/contact.html">Contact</a></li>
-        <li class="logout"><button id="logout">Sign Out</button></li>
-      </ul>
+  </div>
+  <br />
+  <h1 id="directory-title">Blue Wall Restaurants</h1>
+  <p id="description">
+    <strong>Instructions:</strong><br />Select the restaurant name you would
+    like to order from
+  </p>
+  <br />
+  <div class="grid-container">
+    <div class="grid-item">
+      <p>
+        <strong><a href="menu/menu1.html">The Grill</a></strong>
+      </p>
+      <img src="images/the_grill.jpeg" alt="Picture of The Grill" />
     </div>
+    <div class="grid-item">
+      <p>
+        <strong><a href="menu/menu2.html">Tamales</a></strong>
+      </p>
+      <img src="images/tamales.jpeg" alt="Picture of Tamales" />
+    </div>
+    <div class="grid-item">
+      <p>
+        <strong><a href="menu/menu3.html">Deli Delish</a></strong>
+      </p>
+      <img src="images/deli_delish.jpeg" alt="Picture of Deli Delish" />
+    </div>
+    <div class="grid-item">
+      <p>
+        <strong><a href="menu/menu4.html">Tavola</a></strong>
+      </p>
+      <img src="images/tavola.jpeg" alt="Picture of Tavola" />
+    </div>
+    <div class="grid-item">
+      <p>
+        <strong><a href="menu/menu5.html">People’s Organic</a></strong>
+      </p>
+      <img src="images/people.jpeg" alt="Picture of The People's Organic" />
+    </div>
+    <div class="grid-item">
+      <p>
+        <strong><a href="menu/menu6.html">Wasabi</a></strong>
+      </p>
+      <img src="images/wasabi.jpeg" alt="Picture of Wasabi" />
+    </div>
+    <div class="grid-item">
+      <p>
+        <strong><a href="menu/menu7.html">Yum! Bakery</a></strong>
+      </p>
+      <img src="images/yum_bakery.jpeg" alt="Picture of Yum! Bakery" />
+    </div>
+    <div class="grid-item">
+      <p>
+        <strong><a href="menu/menu8.html">Star Ginger</a></strong>
+      </p>
+      <img src="images/star_ginger.jpeg" alt="Picture of Star Ginger" />
+    </div>
+    <div class="grid-item">
+      <p>
+        <strong><a href="menu/menu9.html">Chef's Table</a></strong>
+      </p>
+      <img src="images/chefs_table.jpeg" alt="Picture of Chef's Table" />
+    </div>
+    <div class="grid-item">
+      <p>
+        <strong><a href="menu/menu10.html">Green Fields</a></strong>
+      </p>
+      <img src="images/green_fields.jpeg" alt="Picture of Green Fields" />
+    </div>
+    <br />
+</body>
 
-    <br />
-    <h1 id="directory-title">Blue Wall Restaurants</h1>
-    <p id="description">
-      <strong>Instructions:</strong><br />Select the restaurant name you would
-      like to order from
-    </p>
-    <br />
-    <div class="grid-container">
-      <div class="grid-item">
-        <p>
-          <strong><a href="menu/menu1.html">The Grill</a></strong>
-        </p>
-        <img src="images/the_grill.jpeg" alt="Picture of The Grill" />
-      </div>
-      <div class="grid-item">
-        <p>
-          <strong><a href="menu/menu2.html">Tamales</a></strong>
-        </p>
-        <img src="images/tamales.jpeg" alt="Picture of Tamales" />
-      </div>
-      <div class="grid-item">
-        <p>
-          <strong><a href="menu/menu3.html">Deli Delish</a></strong>
-        </p>
-        <img src="images/deli_delish.jpeg" alt="Picture of Deli Delish" />
-      </div>
-      <div class="grid-item">
-        <p>
-          <strong><a href="menu/menu4.html">Tavola</a></strong>
-        </p>
-        <img src="images/tavola.jpeg" alt="Picture of Tavola" />
-      </div>
-
-      <div class="grid-item">
-        <p>
-          <strong><a href="menu/menu5.html">People’s Organic</a></strong>
-        </p>
-        <img src="images/people.jpeg" alt="Picture of The People's Organic" />
-      </div>
-      <div class="grid-item">
-        <p>
-          <strong><a href="menu/menu6.html">Wasabi</a></strong>
-        </p>
-        <img src="images/wasabi.jpeg" alt="Picture of Wasabi" />
-      </div>
-      <div class="grid-item">
-        <p>
-          <strong><a href="menu/menu7.html">Yum! Bakery</a></strong>
-        </p>
-        <img src="images/yum_bakery.jpeg" alt="Picture of Yum! Bakery" />
-      </div>
-      <div class="grid-item">
-        <p>
-          <strong><a href="menu/menu8.html">Star Ginger</a></strong>
-        </p>
-        <img src="images/star_ginger.jpeg" alt="Picture of Star Ginger" />
-      </div>
-      <div class="grid-item">
-        <p>
-          <strong><a href="menu/menu9.html">Chef's Table</a></strong>
-        </p>
-        <img src="images/chefs_table.jpeg" alt="Picture of Chef's Table" />
-      </div>
-      <div class="grid-item">
-        <p>
-          <strong><a href="menu/menu10.html">Green Fields</a></strong>
-        </p>
-        <img src="images/green_fields.jpeg" alt="Picture of Green Fields" />
-      </div>
-    <br />
-  </body>
 </html>

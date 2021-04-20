@@ -28,6 +28,9 @@ async function loadOrderConfirmation() {
                     html += `<div class="leaders"><span>${item.name}</span><span>${item.price}</span></div>`;
                 }
             });
+            if (order.restaurant == "Chefs Table") {
+                order.restaurant = "Chef's Table"
+            }
             // Populate restaurant name with order information
             $("#restaurant-name").html(order.restaurant);
             // Populate menu-items with order information

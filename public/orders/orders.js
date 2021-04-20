@@ -28,6 +28,10 @@ async function loadOrders() {
                         menu_items += `<div class="leaders"><span>${item.name}</span><span>${item.price}</span></div>`;
                     }
                 });
+                // Add apostrophe for Chef's Table into restaurant name
+                if (order.customer_order.restaurant == "Chefs Table") {
+                    order.customer_order.restaurant = "Chef's Table"
+                }
                 // Create an individual order slip string
                 var menu_order = `
                     <div class="grid-item">

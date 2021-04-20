@@ -1,397 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>People’s Organic</title>
-    <link
-      rel="shortcut icon"
-      href="../images/umass_circle_logo.png"
-      type="image/x-icon"
-    />
-    <link href="menu.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="menu.js" defer></script>
-    <script src="../authentication/authentication.js"></script>
-  </head>
 
-  <body>
-    <ul class="icon-and-title">
-      <li>
-        <img src="../images/umass_circle_logo.png" alt="UMass Amherst Logo" />
-      </li>
-      <li>
-        <h1 id="title">UMass Pick-Up</h1>
-      </li>
+<head>
+  <meta charset="UTF-8" />
+  <title>People’s Organic</title>
+  <link rel="shortcut icon" href="../images/umass_circle_logo.png" type="image/x-icon" />
+  <link href="menu.css" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="menu.js" defer></script>
+  <script src="../authentication/authentication.js"></script>
+</head>
+
+<body>
+  <ul class="icon-and-title">
+    <li>
+      <img src="../images/umass_circle_logo.png" alt="UMass Amherst Logo" />
+    </li>
+    <li>
+      <h1 id="title">UMass Pick-Up</h1>
+    </li>
+  </ul>
+  <div>
+    <ul class="topnav">
+      <li><a class="active" href="../index.html">Home</a></li>
+      <li><a href="../orders/orders.html">Orders</a></li>
+      <li><a href="../contact/contact.html">Contact</a></li>
+      <li class="logout"><button id="logout">Sign Out</button></li>
     </ul>
-
-    <div>
-      <ul class="topnav">
-        <li><a class="active" href="../index.html">Home</a></li>
-        <li><a href="../orders/orders.html">Orders</a></li>
-        <li><a href="../contact/contact.html">Contact</a></li>
-        <li class="logout"><button id="logout">Sign Out</button></li>
-      </ul>
-    </div>
-
-    <br />
-    <div id="menu">
-      <h1>People's Organic Menu</h1>
-      <p id="instructions">
-        <strong>Instructions:</strong><br />Please choose quantity of your
-        desired menu item(s).
-      </p>
-
-      <form>
-        <div id="entrees">
-          <h2>Entrees</h2>
-          <div id="warning" hidden>
-            **Please select at least one item from the entire menu
-          </div>
-          <div>
-            <div class="leaders">
-              <input type="number" name="entree" id="ab" min="0" />
-              <label for="ab">People’s Organic Coffee</label>
-              <span>$1.95</span>
-            </div>
-
-            <div class="leaders">
-              <input type="number" name="entree" id="bbbb" min="0" />
-              <label for="bbbb">Organic Espresso</label>
-              <span>$1.95</span>
-            </div>
-
-            <div class="leaders">
-              <input type="number" name="entree" id="bbb" min="0" />
-              <label for="bbb">Espresso Macchiato</label>
-              <span>$2.25</span>
-            </div>
-
-            <div class="leaders">
-              <input type="number" name="entree" id="cb" min="0" />
-              <label for="cb">Organic Café Americano</label>
-              <span>$2.50</span>
-            </div>
-
-            <div class="leaders">
-              <input type="number" name="entree" id="ctfb" min="0" />
-              <label for="ctfb">Cappuccino </label>
-              <span>$2.75</span>
-            </div>
-
-            <div class="leaders">
-              <input type="number" name="entree" id="db" min="0" />
-              <label for="db">Café Latte</label>
-              <span>$2.75</span>
-            </div>
-
-            <div class="leaders">
-              <input type="number" name="entree" id="dcb" min="0" />
-              <label for="dcb">Vanilla Latte</label>
-              <span>$3.25</span>
-            </div>
-
-            <div class="leaders">
-              <input type="number" name="entree" id="dtb" min="0" />
-              <label for="dtb">Café Mocha</label>
-              <span>$3.25</span>
-            </div>
-
-            <div class="leaders">
-              <input type="number" name="entree" id="fct" min="0" />
-              <label for="fct">Organic Chai </label>
-              <span>$2.75</span>
-            </div>
-
-            <div class="leaders">
-              <input type="number" name="entree" id="hamb" min="0" />
-              <label for="hamb">Organic Hot Cocoa</label>
-              <span>$2.75</span>
-            </div>
-
-            <div class="leaders">
-              <input type="number" name="entree" id="hdsb" min="0" />
-              <label for="hdsb">Caramel Sea Salt Latte</label>
-              <span>$3.75</span>
-            </div>
-
-            <div class="leaders">
-              <input type="number" name="entree" id="hb" min="0" />
-              <label for="hb">Hampshire Burger</label>
-              <span>$9.99</span>
-            </div>
-
-            <div class="leaders">
-              <input type="number" name="entree" id="pbdb" min="0" />
-              <label for="pbdb"> Agave Almond Milk Latte </label>
-              <span>$4.75</span>
-            </div>
-
-            <div class="leaders">
-              <input type="number" name="entree" id="tb" min="0" />
-              <label for="tb">Flavor Shot </label>
-              <span>$0.50</span>
-            </div>
-          </div>
+  </div>
+  <br />
+  <div id="menu">
+    <h1>People's Organic Menu</h1>
+    <p id="instructions">
+      <strong>Instructions:</strong><br />Please choose quantity of your
+      desired menu item(s).
+    </p>
+    <form>
+      <div id="sidesDrinks">
+        <h2>Organic and Fair Trade Hot Beverages</h2>
+        <div id="warning" hidden>
+          **Please select at least one item from the entire menu
         </div>
-
-        <div id="sidesDrinks">
-          <h2>Sustaining Cool Beveragess</h2>
+        <div>
           <div class="leaders">
-            <input type="number" name="Snd" id="cm" min="0" />
-            <label for="cm">Iced Cofee</label>
+            <input type="number" name="entree" id="ab" min="0" />
+            <label for="ab">People’s Organic Coffee</label>
+            <span>$1.95</span>
+          </div>
+          <div class="leaders">
+            <input type="number" name="entree" id="bbbb" min="0" />
+            <label for="bbbb">Organic Espresso</label>
+            <span>$1.95</span>
+          </div>
+          <div class="leaders">
+            <input type="number" name="entree" id="bbb" min="0" />
+            <label for="bbb">Espresso Macchiato</label>
+            <span>$2.25</span>
+          </div>
+          <div class="leaders">
+            <input type="number" name="entree" id="cb" min="0" />
+            <label for="cb">Organic Café Americano</label>
+            <span>$2.50</span>
+          </div>
+          <div class="leaders">
+            <input type="number" name="entree" id="ctfb" min="0" />
+            <label for="ctfb">Cappuccino </label>
             <span>$2.75</span>
           </div>
-
           <div class="leaders">
-            <input type="number" name="Snd" id="sm" min="0" />
-            <label for="sm">Iced Café Latte</label>
+            <input type="number" name="entree" id="db" min="0" />
+            <label for="db">Café Latte</label>
+            <span>$2.75</span>
+          </div>
+          <div class="leaders">
+            <input type="number" name="entree" id="dcb" min="0" />
+            <label for="dcb">Vanilla Latte</label>
+            <span>$3.25</span>
+          </div>
+          <div class="leaders">
+            <input type="number" name="entree" id="dtb" min="0" />
+            <label for="dtb">Café Mocha</label>
+            <span>$3.25</span>
+          </div>
+          <div class="leaders">
+            <input type="number" name="entree" id="fct" min="0" />
+            <label for="fct">Organic Chai </label>
+            <span>$2.75</span>
+          </div>
+          <div class="leaders">
+            <input type="number" name="entree" id="hamb" min="0" />
+            <label for="hamb">Organic Hot Cocoa</label>
+            <span>$2.75</span>
+          </div>
+          <div class="leaders">
+            <input type="number" name="entree" id="hdsb" min="0" />
+            <label for="hdsb">Caramel Sea Salt Latte</label>
             <span>$3.75</span>
           </div>
-
           <div class="leaders">
-            <input type="number" name="Snd" id="vm" min="0" />
-            <label for="vm">Iced Caramel Sea Salt Latte</label>
-            <span>$5.00</span>
+            <input type="number" name="entree" id="pbdb" min="0" />
+            <label for="pbdb"> Agave Almond Milk Latte </label>
+            <span>$4.75</span>
           </div>
-
           <div class="leaders">
-            <input type="number" name="Snd" id="ff" min="0" />
-            <label for="ff">Java Quencher</label>
-            <span>$5.00</span>
-          </div>
-
-          <div class="leaders">
-            <input type="number" name="Snd" id="or" min="0" />
-            <label for="or">Cranberry Crush</label>
-            <span> $5.00</span>
-          </div>
-
-          <div class="leaders">
-            <input type="number" name="Snd" id="ss" min="0" />
-            <label for="ss">Hemp Milk Coconut Mocha </label>
-            <span>$5.00
-            </span>
-          </div>
-
-
-
-
-
-
-         <div id="Goodies">
-          <h2>All Natural Baked Goodies
-        </h2>
-          <div class="leaders">
-            <input type="number" name="Snd" id="cm" min="0" />
-            <label for="cm">Muffins </label>
-            <span>$2.25</span>
-          </div>
-
-          <div class="leaders">
-            <input type="number" name="Snd" id="sm" min="0" />
-            <label for="sm">Bars and Brownies</label>
-            <span>$2.25</span>
-          </div>
-
-          <div class="leaders">
-            <input type="number" name="Snd" id="vm" min="0" />
-            <label for="vm">Cookies</label>
-            <span>$1.75</span>
-          </div>
-
-          <div class="leaders">
-            <input type="number" name="Snd" id="ff" min="0" />
-            <label for="ff">Croissants</label>
-            <span>$2.00</span>
-          </div>
-
-          <div class="leaders">
-            <input type="number" name="Snd" id="or" min="0" />
-            <label for="or">GF Scones</label>
-            <span> $2.25</span>
-          </div>
-
-          <div class="leaders">
-            <input type="number" name="Snd" id="ss" min="0" />
-            <label for="ss">Steel Cut Organic Oatmeal  </label>
-            <span>$2.50
-            </span>
-          </div>
-
-          <div class="leaders">
-            <input type="number" name="Snd" id="ss" min="0" />
-            <label for="ss">Toasted Organic Bagel with Cream Cheese</label>
-            <span>$3.00
-            </span>
-          </div>
-
-
-          <div class="leaders">
-            <input type="number" name="Snd" id="ss" min="0" />
-            <label for="ss">Seasonal Quiche </label>
-            <span>$3.50
-            </span>
-          </div>
-
-          <div class="leaders">
-            <input type="number" name="Snd" id="ss" min="0" />
-            <label for="ss">Ham and Gruyere Biscuit </label>
-            <span>$4.50
-            </span>
-          </div>
-
-          <div id="Hot Sandwiches">
-            <h2>Hot Sandwiches
-          </h2>
-            <div class="leaders">
-              <input type="number" name="Snd" id="cm" min="0" />
-              <label for="cm">Big Red Lentil Burger </label>
-              <span>$7.00</span>
-            </div>
-  
-            <div class="leaders">
-              <input type="number" name="Snd" id="sm" min="0" />
-              <label for="sm">Chelsea Sandwich</label>
-              <span>$6.75</span>
-            </div>
-  
-            <div class="leaders">
-                <input type="number" name="Snd" id="sm" min="0" />
-                <label for="sm">Turkey and Bacon Ciabatta</label>
-                <span>$7.75</span>
-              </div>
-
-              <div class="leaders">
-                <input type="number" name="Snd" id="sm" min="0" />
-                <label for="sm">Chicken and Goat Cheese Ciabatta</label>
-                <span>$7.75</span>
-              </div>
-
-              <div class="leaders">
-                <input type="number" name="Snd" id="sm" min="0" />
-                <label for="sm">Three Cheese Veggie Ciabatta</label>
-                <span>$7.00</span>
-              </div>
-
-
-              <div id="Cold Sandwiches">
-                <h2>Cold Sandwiches
-              </h2>
-                <div class="leaders">
-                  <input type="number" name="Snd" id="cm" min="0" />
-                  <label for="cm">Roasted Turkey & Pesto Sandwich </label>
-                  <span>$8.25</span>
-                </div>
-      
-                <div class="leaders">
-                  <input type="number" name="Snd" id="sm" min="0" />
-                  <label for="sm">Egg Salad Sandwich </label>
-                  <span>$7.25</span>
-                </div>
-      
-
-                <div class="leaders">
-                    <input type="number" name="Snd" id="sm" min="0" />
-                    <label for="sm">People’s Best Veggie Wrap</label>
-                    <span>$7.25</span>
-                  </div>
-
-
-                  <div id="Earthbound Salads">
-                    <h2>Earthbound Salads
-                  </h2>
-                    <div class="leaders">
-                      <input type="number" name="Snd" id="cm" min="0" />
-                      <label for="cm">Grilled Chicken Caesar </label>
-                      <span>$8.25</span>
-                    </div>
-          
-                    <div class="leaders">
-                      <input type="number" name="Snd" id="sm" min="0" />
-                      <label for="sm">Really Greek </label>
-                      <span>$7.25</span>
-                    </div>
-          
-    
-                    <div class="leaders">
-                        <input type="number" name="Snd" id="sm" min="0" />
-                        <label for="sm">Roasted Beet</label>
-                        <span>$7.25</span>
-                      </div>
-               
-
-                    <div class="leaders">
-                        <input type="number" name="Snd" id="sm" min="0" />
-                        <label for="sm">Antioxidant Salad </label>
-                        <span>$8.25</span>
-                      </div>
-
-
-                    <div class="leaders">
-                        <input type="number" name="Snd" id="sm" min="0" />
-                        <label for="sm">Quinoa Bowl</label>
-                        <span>$7.00</span>
-                      </div>
-
-
-                    <div class="leaders">
-                        <input type="number" name="Snd" id="sm" min="0" />
-                        <label for="sm">Acai Bowl</label>
-                        <span>$7.00</span>
-                      </div>
-
-
-                    <div class="leaders">
-                        <input type="number" name="Snd" id="sm" min="0" />
-                        <label for="sm">Power Bowl </label>
-                        <span>$7.00</span>
-                      </div>
-
-
-                    <div class="leaders">
-                        <input type="number" name="Snd" id="sm" min="0" />
-                        <label for="sm">Spa Salad</label>
-                        <span>$8.25</span>
-                      </div>
-
-                      <div id="Breakfast">
-                        <h2>
-                      </h2>
-                        <div class="leaders">
-                          <input type="number" name="Snd" id="cm" min="0" />
-                          <label for="cm">People’s Organic Breakfast Bagel</label>
-                          <span>$4.75</span>
-                        </div>
-              
-                        <div class="leaders">
-                          <input type="number" name="Snd" id="sm" min="0" />
-                          <label for="sm">People’s All Natural Breakfast Croissant</label>
-                          <span>$4.75</span>
-                        </div>
-              
-                        <div class="leaders">
-                            <input type="number" name="Snd" id="sm" min="0" />
-                            <label for="sm">Vegetarian Croissant</label>
-                            <span>$4.50</span>
-                          </div>
-                
-                          <div class="leaders">
-                            <input type="number" name="Snd" id="sm" min="0" />
-                            <label for="sm">Eggal</label>
-                            <span>$3.75</span>
-                          </div>
-        
-
-
-          <hr />
-          <div>
-            <p id="total"><strong>Order Total: </strong>$0.00</p>
+            <input type="number" name="entree" id="tb" min="0" />
+            <label for="tb">Flavor Shot </label>
+            <span>$0.50</span>
           </div>
         </div>
-        <input type="button" id="checkout" value="Check Out" />
-        <div id="error"></div>
-      </form>
-    </div>
-    <br />
-  </body>
+        <h2>Sustaining Cool Beverages</h2>
+        <div class="leaders">
+          <input type="number" name="Snd" id="cm" min="0" />
+          <label for="cm">Iced Coffee</label>
+          <span>$2.75</span>
+        </div>
+        <div class="leaders">
+          <input type="number" name="Snd" id="sm" min="0" />
+          <label for="sm">Iced Café Latte</label>
+          <span>$3.75</span>
+        </div>
+        <div class="leaders">
+          <input type="number" name="Snd" id="vm" min="0" />
+          <label for="vm">Iced Caramel Sea Salt Latte</label>
+          <span>$5.00</span>
+        </div>
+        <div class="leaders">
+          <input type="number" name="Snd" id="ff" min="0" />
+          <label for="ff">Java Quencher</label>
+          <span>$5.00</span>
+        </div>
+        <div class="leaders">
+          <input type="number" name="Snd" id="or" min="0" />
+          <label for="or">Cranberry Crush</label>
+          <span> $5.00</span>
+        </div>
+        <div class="leaders">
+          <input type="number" name="Snd" id="ss" min="0" />
+          <label for="ss">Hemp Milk Coconut Mocha </label>
+          <span>$5.00
+          </span>
+        </div>
+      </div>
+      <div id="entrees">
+        <h2>All Natural Baked Goodies</h2>
+        <div class="leaders">
+          <input type="number" name="Snd" id="cm" min="0" />
+          <label for="cm">Muffins </label>
+          <span>$2.25</span>
+        </div>
+        <div class="leaders">
+          <input type="number" name="Snd" id="sm" min="0" />
+          <label for="sm">Bars and Brownies</label>
+          <span>$2.25</span>
+        </div>
+        <div class="leaders">
+          <input type="number" name="Snd" id="vm" min="0" />
+          <label for="vm">Cookies</label>
+          <span>$1.75</span>
+        </div>
+        <div class="leaders">
+          <input type="number" name="Snd" id="ff" min="0" />
+          <label for="ff">Croissants</label>
+          <span>$2.00</span>
+        </div>
+        <div class="leaders">
+          <input type="number" name="Snd" id="or" min="0" />
+          <label for="or">Gluten-Free Scones</label>
+          <span> $2.25</span>
+        </div>
+        <div class="leaders">
+          <input type="number" name="Snd" id="ss" min="0" />
+          <label for="ss">Steel Cut Organic Oatmeal </label>
+          <span>$2.50
+          </span>
+        </div>
+        <div class="leaders">
+          <input type="number" name="Snd" id="ss" min="0" />
+          <label for="ss">Toasted Organic Bagel with Cream Cheese</label>
+          <span>$3.00
+          </span>
+        </div>
+        <div class="leaders">
+          <input type="number" name="Snd" id="ss" min="0" />
+          <label for="ss">Seasonal Quiche </label>
+          <span>$3.50
+          </span>
+        </div>
+        <div class="leaders">
+          <input type="number" name="Snd" id="ss" min="0" />
+          <label for="ss">Ham and Gruyere Biscuit </label>
+          <span>$4.50
+          </span>
+        </div>
+        <h2>Hot Sandwiches</h2>
+        <div class="leaders">
+          <input type="number" name="Snd" id="cm" min="0" />
+          <label for="cm">Big Red Lentil Burger </label>
+          <span>$7.00</span>
+        </div>
+        <div class="leaders">
+          <input type="number" name="Snd" id="sm" min="0" />
+          <label for="sm">Chelsea Sandwich</label>
+          <span>$6.75</span>
+        </div>
+        <div class="leaders">
+          <input type="number" name="Snd" id="sm" min="0" />
+          <label for="sm">Turkey and Bacon Ciabatta</label>
+          <span>$7.75</span>
+        </div>
+        <div class="leaders">
+          <input type="number" name="Snd" id="sm" min="0" />
+          <label for="sm">Chicken and Goat Cheese Ciabatta</label>
+          <span>$7.75</span>
+        </div>
+        <div class="leaders">
+          <input type="number" name="Snd" id="sm" min="0" />
+          <label for="sm">Three Cheese Veggie Ciabatta</label>
+          <span>$7.00</span>
+        </div>
+        <div id="Cold Sandwiches">
+          <h2>Cold Sandwiches</h2>
+          <div class="leaders">
+            <input type="number" name="Snd" id="cm" min="0" />
+            <label for="cm">Roasted Turkey & Pesto Sandwich </label>
+            <span>$8.25</span>
+          </div>
+          <div class="leaders">
+            <input type="number" name="Snd" id="sm" min="0" />
+            <label for="sm">Egg Salad Sandwich </label>
+            <span>$7.25</span>
+          </div>
+          <div class="leaders">
+            <input type="number" name="Snd" id="sm" min="0" />
+            <label for="sm">People’s Best Veggie Wrap</label>
+            <span>$7.25</span>
+          </div>
+          <h2>Earthbound Salads</h2>
+          <div class="leaders">
+            <input type="number" name="Snd" id="cm" min="0" />
+            <label for="cm">Grilled Chicken Caesar </label>
+            <span>$8.25</span>
+          </div>
+          <div class="leaders">
+            <input type="number" name="Snd" id="sm" min="0" />
+            <label for="sm">Really Greek Salad</label>
+            <span>$7.25</span>
+          </div>
+          <div class="leaders">
+            <input type="number" name="Snd" id="sm" min="0" />
+            <label for="sm">Roasted Beet</label>
+            <span>$7.25</span>
+          </div>
+          <div class="leaders">
+            <input type="number" name="Snd" id="sm" min="0" />
+            <label for="sm">Antioxidant Salad </label>
+            <span>$8.25</span>
+          </div>
+          <div class="leaders">
+            <input type="number" name="Snd" id="sm" min="0" />
+            <label for="sm">Quinoa Bowl</label>
+            <span>$7.00</span>
+          </div>
+          <div class="leaders">
+            <input type="number" name="Snd" id="sm" min="0" />
+            <label for="sm">Acai Bowl</label>
+            <span>$7.00</span>
+          </div>
+          <div class="leaders">
+            <input type="number" name="Snd" id="sm" min="0" />
+            <label for="sm">Power Bowl </label>
+            <span>$7.00</span>
+          </div>
+          <div class="leaders">
+            <input type="number" name="Snd" id="sm" min="0" />
+            <label for="sm">Spa Salad</label>
+            <span>$8.25</span>
+          </div>
+          <div id="Breakfast">
+            <h2>Breakfast</h2>
+            <div class="leaders">
+              <input type="number" name="Snd" id="cm" min="0" />
+              <label for="cm">People’s Organic Breakfast Bagel</label>
+              <span>$4.75</span>
+            </div>
+            <div class="leaders">
+              <input type="number" name="Snd" id="sm" min="0" />
+              <label for="sm">People’s All Natural Breakfast Croissant</label>
+              <span>$4.75</span>
+            </div>
+            <div class="leaders">
+              <input type="number" name="Snd" id="sm" min="0" />
+              <label for="sm">Vegetarian Croissant</label>
+              <span>$4.50</span>
+            </div>
+            <hr />
+            <div>
+              <p id="total"><strong>Order Total: </strong>$0.00</p>
+            </div>
+          </div>
+          <input type="button" id="checkout" value="Check Out" />
+          <div id="error"></div>
+        </div>
+    </form>
+  </div>
+  <br />
+</body>
+
 </html>
