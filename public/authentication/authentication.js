@@ -1,8 +1,11 @@
 $(document).ready(function () {
   // Login customer 
-  $("#login").click(validateInput);
+  $("#login").click(validateLogin);
+  // Create an account for the customer 
+  $("#signup").click(validateSignUp);
   // Hide alert if they are inputting a username/password
-  $('.validate-input .input100').click(function(){
+  $('.validate-input .input100').click(function () {
+      $("#error").attr('hidden', true);
       hideAlert(this);
   });
   // Logout customer
@@ -46,6 +49,39 @@ async function login() {
   
 }
 
+// Create an account for the user in the DB
+async function signup() {
+  let username = $("#username").val();
+  let password = $("#password").val();
+
+  if (username != "" && password != "") {
+
+    const requestAuth = {
+      username: username,
+      password: password
+    }
+    // POST a request with the JSON-encoded username and password to /api/auth/signup
+    $.ajax({
+      url: "/api/auth/signup",
+      type: "POST",
+      data: JSON.stringify(requestAuth),
+      contentType: "application/json"
+    }).done(function (data) {
+      // Reset the form after saving the login
+      $("form").trigger("reset");
+      // Add the token to local storage for later access in logout
+      localStorage.setItem("token", data.token);
+      // Add the customer id to local storage for access accross the website
+      localStorage.setItem("customer_id", data.customer_id);
+      // Open the home page in the same window
+      open("../index.html", "_self");
+    }).fail(function () {
+        $("#error").removeAttr('hidden');
+    });
+  }
+  
+}
+
 // Logout the user from the website
 async function logout() {
     const token = localStorage.getItem("token");
@@ -71,7 +107,7 @@ async function logout() {
 */
 
 
-function validateInput() {
+function validateLogin() {
     var input = $('.validate-input .input100');
 
     var valid = true;
@@ -85,6 +121,22 @@ function validateInput() {
 
   if (valid) {
       login()
+  }
+}
+
+function validateSignUp() {
+    var input = $('.validate-input .input100');
+    var valid = true;
+
+    for(var i=0; i<input.length; i++) {
+        if(input[i].value == ''){
+            showAlert(input[i]);
+            valid=false;
+        }
+    }
+
+  if (valid) {
+      signup()
   }
 }
 

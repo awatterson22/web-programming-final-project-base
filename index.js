@@ -75,6 +75,34 @@ express()
       res.sendStatus(500);
     }
   })
+  // ENDPOINT for user authentication in signup page
+  .post("/api/auth/signup", async function (req, res) {
+    // Keep track of the customer for authentication at logout
+    customer = req.body.username;
+    const username = customer;
+    const password = req.body.password;
+
+    const payload = {
+      username: username,
+      password: password
+    }
+    // Create a token for the customer
+    const token = jwt.encode(payload, secret);
+    // Get an authentication object from the database
+    try {
+      authentication = await addUser(username, password);
+      // If the user is now authorized, pass the client side the token and the customer id
+      if (authentication.authorized) {
+          res.json({ token: token, customer_id: authentication.ID });
+        } else {
+          // Unauthorized access
+          res.sendStatus(401);
+        }
+    } catch (error) {
+      console.trace(error);
+      res.sendStatus(500);
+    }
+  })
   // ENDPOINT for retrieving all of the user's orders from /api/orders to display on orders page
   .get('/api/orders/:customer_id', async function (req, res) {
     // Get the customer_id to query the DB with
@@ -297,8 +325,8 @@ async function authenticate(username, password) {
   } catch (err) {
     console.trace(err);
   } 
-  // Otherwise, they are a new user, so we add them to the database and give them access 
-  return { authorized: true, ID: addUser(username, password) };
+  // Otherwise, they aren't authorized with this username and password 
+  return { authorized: false, ID: null };
 }
 
 // add a new user to the database
@@ -307,21 +335,30 @@ async function addUser(username, password) {
   let customer_id = 1;
   // Create hash for password
   const hash = bcrypt.hashSync(password, 10);
+  // Check if user is in database already
+  let exists_query = "SELECT customer_id, password_hash " ;
+      exists_query += "FROM customer " ;
+      exists_query += "WHERE username='" + username + "';";
   // Add new customer to database
-  let query_text = "INSERT INTO customer (username, password_hash) ";
-      query_text += "VALUES('" + username + "','" + hash + "') ";
-      query_text += "RETURNING customer_id;"
+  let insert_query = "INSERT INTO customer (username, password_hash) ";
+      insert_query += "VALUES('" + username + "','" + hash + "') ";
+      insert_query += "RETURNING customer_id;"
   try {
     const client = await pool.connect();
-    results = await client.query(query_text);
-    if (results.rows.length > 0) {
-      customer_id = results.rows[0].customer_id;
+    existence = await client.query(exists_query);
+    if (existence.rows.length > 0) {
+      customer_id = null;
+    } else {
+      results = await client.query(insert_query);
+      if (results.rows.length > 0) {
+        customer_id = results.rows[0].customer_id;
+      }
     }
     client.release();
   } catch (err) {
     console.trace(err);
   }
-  return customer_id;
+  return { authorized: customer_id != null, ID: customer_id };
 }
 
 // server side validation for the menu page submissions

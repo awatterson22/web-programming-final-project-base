@@ -146,7 +146,12 @@ textarea:-ms-input-placeholder {
 
 .create-account {
   text-align: center;
-  padding-top: 136px;
+  padding-top: 80px;
+}
+
+.back-to-login {
+  text-align: center;
+  padding-top: 50px;
 }
 
 /*---------------------------------------------*/

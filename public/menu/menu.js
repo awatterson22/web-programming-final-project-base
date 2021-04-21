@@ -60,7 +60,7 @@ function checkout() {
             localStorage.setItem("confirm_num", data.confirm_num);
             location.href = "/confirmation/confirmation.html";
         }).fail(function (jqXHR) {
-            $("error").html("The order could not be sent. Please try again");
+            $("#error").html("The order could not be sent. Please try again");
         });
     }
 

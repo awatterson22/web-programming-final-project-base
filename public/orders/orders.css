@@ -18,6 +18,7 @@ img {
 
 .center {
   display: flex;
+  margin: auto;
   justify-content: space-between;
 }
 
@@ -32,7 +33,7 @@ img {
 }
 
 #placeholder {
-  width: 12.5%;
+  width: 165px;
 }
 
 #description {

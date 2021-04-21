@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
+    <title>UMass Pick-Up</title>
     <link rel="shortcut icon" href="../images/umass_circle_logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="../css/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -12,9 +13,6 @@
     <script src="/authentication/authentication.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-
-
-    <title>UMass Pick-Up</title>
 </head>
 
 <body>
@@ -28,7 +26,7 @@
                     </span>
 
                     <div id="error" hidden>
-                        <p>Invalid Login</p>
+                        <p>User already exists</p>
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Username is required">
@@ -48,7 +46,14 @@
                     </div>
 
                     <div class="container-login100-form-btn">
-                        <input type="button" id="login" value="Sign Up" class="login100-form-btn">
+                        <input type="button" id="signup" value="Sign Up" class="login100-form-btn">
+                    </div>
+
+                    <div class="back-to-login">
+                        <a class="txt" href="/">
+                            <i class="fa fa-long-arrow-left m-l-5" aria-hidden="true"></i>
+                            Back to Login
+                        </a>
                     </div>
                 </form>
             </div>
