@@ -6,15 +6,21 @@ This is an online ordering website for University of Massachusetts students and 
 
 <u>**Login:**</u>
 
-Login with your UMass Spire ID and Password.
+Login into your UMass Pick-Up account with your username and password.
 
 ![Login Page](/public/images/login_example.png)
 
+<u>**Sign Up:**</u>
+
+Click 'Create your account' to sign up and create your UMass Pick-Up account with a username and password.
+
+![Sign Up Page](/public/images/signup_example.png)
+
 <u>**Home:**</u>
 
-Choose to order from four restaurants:
+Choose to order from the following Blue Wall restaurants:
 
-- The Grill, Tamales, Tavola, and Deli Delish
+- The Grill, Tamales, Deli Delish, Tavola, People's Organic, Wasabi, Yum! Bakery, Star Ginger, Chef's Table, and Green Fields
 
 ![Home Page](/public/images/home_example.png)
 
@@ -45,3 +51,10 @@ Click the 'Contact' button to access the Google Maps location and contact inform
 Click the 'Sign Out' button at the top right corner of the page to logout of UMass Pick-Up.
 
 ![Sign Out](/public/images/signout_example.png)
+
+<u>**CREDITS:**</u>
+
+This website used and adapted implementations from:
+
+- https://colorlib.com/wp/template/login-form-v1/
+- Font Awesome 4.7.0 \* by @davegandy - http://fontawesome.io - @fontawesome, License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
