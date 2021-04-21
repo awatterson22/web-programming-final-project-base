@@ -1,6 +1,10 @@
 $(document).ready(function () {
   // Login customer 
-  $("#login").click(login);
+  $("#login").click(validateInput);
+  // Hide alert if they are inputting a username/password
+  $('.validate-input .input100').click(function(){
+      hideAlert(this);
+  });
   // Logout customer
   $("#logout").click(logout);
 });
@@ -58,4 +62,40 @@ async function logout() {
       $("#error").html = ("Error logging out");
       $("#error").show();
     });
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+ *          Functions adapted from https://colorlib.com/wp/template/login-form-v1/         *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+*/
+
+
+function validateInput() {
+    var input = $('.validate-input .input100');
+
+    var valid = true;
+
+    for(var i=0; i<input.length; i++) {
+        if(input[i].value == ''){
+            showAlert(input[i]);
+            valid=false;
+        }
+    }
+
+  if (valid) {
+      login()
+  }
+}
+
+function showAlert(input) {
+    var thisAlert = $(input).parent();
+
+    $(thisAlert).addClass('alert-validate');
+}
+
+function hideAlert(input) {
+    var thisAlert = $(input).parent();
+
+    $(thisAlert).removeClass('alert-validate');
 }

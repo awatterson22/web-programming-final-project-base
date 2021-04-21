@@ -3,60 +3,52 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>UMass Pick-Up</title>
     <link rel="shortcut icon" href="../images/umass_circle_logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="../css/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
-    <link rel="stylesheet" type="text/css" href="/authentication/authentication.css" />
+    <link rel="stylesheet" type="text/css" href="../authentication/authentication.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/authentication/authentication.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-    <script src="/authentication/authentication.js"></script>
+
+
+    <title>UMass Pick-Up</title>
 </head>
 
 <body>
     <div class="limiter">
         <div class="container-login100">
-            <div class="wrap-login100">
-                <div class="login100-pic">
-                    <img src="../images/umass_circle_logo.png" alt="UMass Amherst logo."><br></a> <br>
-                </div>
-                
+            <div class="wrap-signup100">
+
                 <form class="login100-form validate-form">
                     <span class="login100-form-title">
-                        Welcome to UMass Pick-Up
+                        Create your UMass Pick-Up account
                     </span>
-    
+
                     <div id="error" hidden>
                         <p>Invalid Login</p>
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Username is required">
-                        <input class="input100" type="text" id = "username" name="username" placeholder="Username">
+                        <input class="input100" type="text" id="username" name="username" placeholder="Username">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                         </span>
                     </div>
-    
+
                     <div class="wrap-input100 validate-input" data-validate="Password is required">
-                        <input class="input100" type="password" id = "password" name="password" placeholder="Password">
+                        <input class="input100" type="password" id="password" name="password" placeholder="Password">
                         <span class="focus-input100"></span>
                         <span class="symbol-input100">
                             <i class="fa fa-lock" aria-hidden="true"></i>
                         </span>
                     </div>
-    
+
                     <div class="container-login100-form-btn">
-                        <input type="button" id="login" value="Login" class="login100-form-btn">
-                    </div>
-    
-                    <div class="create-account">
-                        <a class="txt" href="/authentication/signup.html">
-                            Create your account
-                            <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-                        </a>
+                        <input type="button" id="login" value="Sign Up" class="login100-form-btn">
                     </div>
                 </form>
             </div>
