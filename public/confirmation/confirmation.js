@@ -4,11 +4,11 @@ $(document).ready(function () {
         title: "Please pay at the restaurant",
         placement: "left"
     });
-    // AFTER 25 Minutes
+    // AFTER 25 Minutes stop updating status
     setTimeout(60 * 25000);
     // Load the order confirmation at the opening of the page
     loadOrderConfirmation();
-    // Update every 5 Minutes
+    // Update every 5 Minutes - mimics actual order being processed on the other side
     setInterval(updateStatus, 60 * 5000);
     $("#refresh").click(refreshStatus);
 });
@@ -28,6 +28,7 @@ async function loadOrderConfirmation() {
                     html += `<div class="leaders"><span>${item.name}</span><span>${item.price}</span></div>`;
                 }
             });
+            // add appostrophe back into Chef's Table restaurant name
             if (order.restaurant == "Chefs Table") {
                 order.restaurant = "Chef's Table"
             }

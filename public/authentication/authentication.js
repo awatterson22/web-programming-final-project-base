@@ -108,6 +108,7 @@ function validateLogin() {
 
   var valid = true;
 
+  // Confirm that user put in a username and password
   for(var i=0; i<input.length; i++) {
     if(input[i].value == ''){
       showAlert(input[i]);
