@@ -13,6 +13,18 @@ $(document).ready(function () {
   $("#logout").click(logout);
 });
 
+$(document).keypress(function (event) {
+  // If user hits space bar or enter key, it's the same as a login/signup button
+  if (event.keyCode == 32 || event.keyCode == 13) {
+    if ($('input[type="button"]')[0].id == "login") {
+      validateLogin();
+    }
+    if ($('input[type="button"]')[0].id == "signup") {
+      validateSignUp();
+    }
+  }
+})
+
 // Login the user from the login page
 async function login() {
   let username = $("#username").val();
