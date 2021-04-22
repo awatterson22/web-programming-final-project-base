@@ -5,8 +5,9 @@ $(document).ready(function () {
   $("#signup").click(validateSignUp);
   // Hide alert if they are inputting a username/password
   $('.validate-input .input100').click(function () {
-      $("#error").attr('hidden', true);
-      hideAlert(this);
+    $("#invalid-login").attr('hidden', true);
+    $("#already-exists").attr('hidden', true);
+    hideAlert(this);
   });
   // Logout customer
   $("#logout").click(logout);
@@ -40,13 +41,10 @@ async function login() {
       // Open the home page in the same window
       open("../index.html", "_self");
     }).fail(function () {
-        $("#error").show();
+      console.log($("#error"));
+      $("#invalid-login").removeAttr('hidden');
     });
-  } else {
-      // Tell user that they have given an invalid login
-      $("#error").show();
   }
-  
 }
 
 // Create an account for the user in the DB
@@ -76,28 +74,26 @@ async function signup() {
       // Open the home page in the same window
       open("../index.html", "_self");
     }).fail(function () {
-        $("#error").removeAttr('hidden');
+      $("#already-exists").removeAttr('hidden');
     });
   }
-  
 }
 
 // Logout the user from the website
 async function logout() {
-    const token = localStorage.getItem("token");
-    $.ajax({
-      url: "/api/status",
-      type: "GET",
-      headers: {"X-Auth": token}
-    }).done(function (data) {
-      // Clear the local token created on login amd the customer's id
-      localStorage.clear();
-      // Redirect back to home page
-      location.href = "/";
-    }).fail(function () {
-      $("#error").html = ("Error logging out");
-      $("#error").show();
-    });
+  const token = localStorage.getItem("token");
+  $.ajax({
+    url: "/api/status",
+    type: "GET",
+    headers: {"X-Auth": token}
+  }).done(function (data) {
+    // Clear the local token created on login amd the customer's id
+    localStorage.clear();
+    // Redirect back to home page
+    location.href = "/";
+  }).fail(function () {
+    console.log("Error logging out");
+  });
 }
 
 
@@ -108,35 +104,43 @@ async function logout() {
 
 
 function validateLogin() {
-    var input = $('.validate-input .input100');
+  var input = $('.validate-input .input100');
 
-    var valid = true;
+  var valid = true;
 
-    for(var i=0; i<input.length; i++) {
-        if(input[i].value == ''){
-            showAlert(input[i]);
-            valid=false;
-        }
+  for(var i=0; i<input.length; i++) {
+    if(input[i].value == ''){
+      showAlert(input[i]);
+      valid=false;
     }
+  }
 
   if (valid) {
-      login()
+    login()
   }
 }
 
 function validateSignUp() {
-    var input = $('.validate-input .input100');
-    var valid = true;
+  var input = $('.validate-input .input100');
+  var valid = true;
 
-    for(var i=0; i<input.length; i++) {
-        if(input[i].value == ''){
-            showAlert(input[i]);
-            valid=false;
-        }
+  // Confirm that user put in a username and password
+  for(var i=0; i<input.length; i++) {
+    if(input[i].value == ''){
+      showAlert(input[i]);
+      valid=false;
     }
+  }
 
+  // Confirm that passwords are the same
+  if ($('#confirm-password').val() !== $('#password').val()) {
+    showAlert(input[2]);
+    valid=false;
+  }
+    
+  
   if (valid) {
-      signup()
+    signup()
   }
 }
 

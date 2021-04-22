@@ -369,7 +369,8 @@ button:hover {
   background: #333333;
 }
 
-#error p {
+#invalid-login p,
+#already-exists p {
   padding: 4px 0px;
   text-align: center;
   font-size: 14px;
