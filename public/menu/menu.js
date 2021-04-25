@@ -1,4 +1,9 @@
 $(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip({
+        title: "Please select at least one item from the menu",
+        placement: "left"
+    });
+    $("svg").hide();
     // When something changes on the menu validate the order
     $("#menu").on("change", validateOrder);
     // When something changes on the menu update the total
@@ -22,12 +27,10 @@ function validateOrder(){
 
     if (totalItems > 0) {
         // Hide the warning if the customer has chosen an entree or side
-        $("#warning").hide();
+        $("svg").hide();
         return true;
     }
     else {
-        // Display the warning if the customer hasn't chosen anything
-        $("#warning").show();
         return false;
     }
 }
@@ -62,6 +65,9 @@ function checkout() {
         }).fail(function (jqXHR) {
             $("#error").html("The order could not be sent. Please try again");
         });
+    } else {
+        // Display the warning if the customer hasn't chosen anything
+        $("svg").show();
     }
 
 }

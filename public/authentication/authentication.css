@@ -438,6 +438,18 @@ button:hover {
   opacity: 1;
 }
 
+/* NProgress styles used from http://nmackey.com/accessible-nprogress */
+/* NProgress BAR */
+#nprogress .bar {
+  background: rgba(137, 22, 22, 255);
+  height: 7px;
+}
+/* NProgress SPINNER */
+.spinner-icon {
+  border-color: rgba(137, 22, 22, 255) transparent transparent
+    rgba(137, 22, 22, 255) !important;
+}
+
 @media (max-width: 992px) {
   .alert-validate::before {
     visibility: visible;

@@ -4,10 +4,13 @@
 <head>
     <meta charset="UTF-8" />
     <title>Wasabi</title>
-    <link rel="shortcut icon" href="../images/umass_circle_logo.png" type="image/x-icon" />
-    <link href="menu.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="../images/umass_circle_logo.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="menu.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="menu.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js"></script>
+    <script src="menu.js"></script>
     <script src="../authentication/authentication.js"></script>
 </head>
 
@@ -37,9 +40,6 @@
         <form>
             <div id="entrees">
                 <h2>Appetizers</h2>
-                <div id="warning" hidden>
-                    **Please select at least one item from the entire menu
-                </div>
                 <div class="leaders">
                     <input type="number" name="entree" id="ab" min="0" />
                     <label for="ab">Edamame</label>
@@ -246,7 +246,10 @@
                     <p id="total"><strong>Order Total: </strong>$0.00</p>
                 </div>
             </div>
-            <input type="button" id="checkout" value="Check Out" />
+            <div class="flex">
+                <i class="fas fa-exclamation-circle" data-toggle="tooltip"></i>
+                <input type="button" id="checkout" value="Check Out">
+            </div>
             <div id="error"></div>
         </form>
     </div>

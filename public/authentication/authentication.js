@@ -37,6 +37,9 @@ async function login() {
       username: username,
       password: password
     }
+    // start the progress bar
+    NProgress.start();
+    
     // POST a request with the JSON-encoded username and password to /api/auth
     $.ajax({
       url: "/api/auth",
@@ -53,10 +56,12 @@ async function login() {
       // Open the home page in the same window
       open("../index.html", "_self");
     }).fail(function () {
-      console.log($("#error"));
       $("#invalid-login").removeAttr('hidden');
     });
+    // finish the loading of the progress bar
+    NProgress.done();
   }
+
 }
 
 // Create an account for the user in the DB
@@ -70,6 +75,9 @@ async function signup() {
       username: username,
       password: password
     }
+    // start the progress bar
+    NProgress.start();
+
     // POST a request with the JSON-encoded username and password to /api/auth/signup
     $.ajax({
       url: "/api/auth/signup",
@@ -88,6 +96,8 @@ async function signup() {
     }).fail(function () {
       $("#already-exists").removeAttr('hidden');
     });
+    // finish the loading of the progress bar
+    NProgress.done();
   }
 }
 
